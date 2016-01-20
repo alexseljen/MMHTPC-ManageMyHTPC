@@ -1,21 +1,5 @@
 <?php
 
-/**
- * Installs the PHP Login & User Management database
- *
- * LICENSE:
- *
- * This source file is subject to the licensing terms that
- * is available through the world-wide-web at the following URI:
- * http://codecanyon.net/wiki/support/legal-terms/licensing-terms/.
- *
- * @author       Jigowatt <info@jigowatt.co.uk>
- * @author       Matt Gates <info@mgates.me>
- * @copyright    Copyright © 2009-2015 Jigowatt Ltd.
- * @license      http://codecanyon.net/wiki/support/legal-terms/licensing-terms/
- * @link         http://codecanyon.net/item/php-login-user-management/49008
- */
-
 include_once("header.php");
 
 $install = new Install();
@@ -192,15 +176,15 @@ class Install {
 				(7, 'block-msg-out-enable', '1'),
 				(8, 'email-welcome-msg', 'Hello {{full_name}} !\r\n\r\nThanks for registering at {{site_address}}. Here are your account details:\r\n\r\nName: {{full_name}}\r\nUsername: {{username}}\r\nEmail: {{email}}\r\nPassword: *hidden*\r\n\r\nYou will first have to activate your account by clicking on the following link:\r\n\r\n{{activate}}'),
 				(9, 'email-activate-msg', 'Hi there {{full_name}} !\r\n\r\nYour account at {{site_address}} has been successfully activated :). \r\n\r\nFor your reference, your username is <strong>{{username}}</strong>. \r\n\r\nSee you soon!'),
-				(10, 'email-activate-subj', 'You''ve activated your account at Jigowatt !'),
-				(11, 'email-activate-resend-subj', 'Here''s your activation link again for Jigowatt'),
+				(10, 'email-activate-subj', 'You''ve activated your account !'),
+				(11, 'email-activate-resend-subj', 'Here''s your activation link again'),
 				(12, 'email-activate-resend-msg', 'Why hello, {{full_name}}. \r\n\r\nI believe you requested this:\r\n{{activate}}\r\n\r\nClick the link above to activate your account :)'),
-				(13, 'email-welcome-subj', 'Thanks for signing up with Jigowatt :)'),
-				(14, 'email-forgot-success-subj', 'Your password has been reset at Jigowatt'),
+				(13, 'email-welcome-subj', 'Thanks for signing up :)'),
+				(14, 'email-forgot-success-subj', 'Your password has been reset'),
 				(15, 'email-forgot-success-msg', 'Welcome back, {{full_name}} !\r\n\r\nI''m just letting you know your password at {{site_address}} has been successfully changed. \r\n\r\nHopefully you were the one that requested this password reset !\r\n\r\nCheers'),
-				(16, 'email-forgot-subj', 'Lost your password at Jigowatt?'),
-				(17, 'email-forgot-msg', 'Hi {{full_name}},\r\n\r\nYour username is <strong>{{username}}</strong>.\r\n\r\nTo reset your password at Jigowatt, please click the following password reset link:\r\n{{reset}}\r\n\r\nSee you soon!'),
-				(18, 'email-add-user-subj', 'You''re registered with Jigowatt !'),
+				(16, 'email-forgot-subj', 'Lost your password?'),
+				(17, 'email-forgot-msg', 'Hi {{full_name}},\r\n\r\nYour username is <strong>{{username}}</strong>.\r\n\r\nTo reset your password, please click the following password reset link:\r\n{{reset}}\r\n\r\nSee you soon!'),
+				(18, 'email-add-user-subj', 'You''re registered !'),
 				(19, 'email-add-user-msg', 'Hello {{full_name}} !\r\n\r\nYou''re now registered at {{site_address}}. Here are your account details:\r\n\r\nName: {{full_name}}\r\nUsername: {{username}}\r\nEmail: {{email}}\r\nPassword: {{password}}'),
 				(20, 'pw-encrypt-force-enable', '0'),
 				(21, 'pw-encryption', 'MD5'),
@@ -265,8 +249,8 @@ class Install {
 			$this->query("
 				INSERT IGNORE INTO `login_users` (`user_id`, `user_level`, `restricted`, `username`, `name`, `email`, `password`) VALUES
 				(1, 'a:3:{i:0;s:1:\"3\";i:1;s:1:\"1\";i:2;s:1:\"2\";}', 0, :admin_user, 'Demo Admin', :admin_email, :admin_pass),
-				(2, 'a:2:{i:0;s:1:\"2\";i:1;s:1:\"3\";}', 0, 'special', 'Demo Special', 'test.special@jigowatt.co.uk', '0bd6506986ec42e732ffb866d33bb14e'),
-				(3, 'a:1:{i:0;s:1:\"3\";}', 0, 'user', 'Demo User', 'test.user@jigowatt.co.uk', 'ee11cbb19052e40b07aac0ca060c23ee');
+				(2, 'a:2:{i:0;s:1:\"2\";i:1;s:1:\"3\";}', 0, 'special', 'Demo Special', 'test.special@test.comk', '0bd6506986ec42e732ffb866d33bb14e'),
+				(3, 'a:1:{i:0;s:1:\"3\";}', 0, 'user', 'Demo User', 'test.user@test.com', 'ee11cbb19052e40b07aac0ca060c23ee');
 			", $params);
 
 		} else $this->error = 'Your tables already exist! I won\'t insert anything.';
