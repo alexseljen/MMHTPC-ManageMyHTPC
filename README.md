@@ -28,7 +28,7 @@ You may need to do an Database update, go ahead and click the red button.
 ![Desktop screenshot](http://i.imgur.com/Y3HuXMO.png)
 
 You're all set! Go ahead and Login now.
-![Desktop screenshot](http://i.mgur.com/r8HCsYf.png)
+![Desktop screenshot](http://i.imgur.com/r8HCsYf.png)
 
 This is where the Admin links are located:
-![Desktop screenshot](http://i.imgur.com/Xjc8dC6.png
+![Desktop screenshot](http://i.imgur.com/Xjc8dC6.png)
