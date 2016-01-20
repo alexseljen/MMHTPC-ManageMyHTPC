@@ -1,8 +1,31 @@
 <!doctype html>
 <?php
-function exception_error_handler($errno, $errstr, $errfile, $errline ) {
-    throw new ErrorException($errstr, $errno, 0, $errfile, $errline);
+
+if(isset($_GET['Break'])) //
+{
+    $BreakFrame = true;
+    $BreakToPage = "index.php";
+
+}?>
+
+<script language="JavaScript" type="text/javascript">
+function changeURL( url ) {
+    document.location = url;
 }
+</script>
+
+<?php if($BreakFrame) { ?>
+
+<script language="JavaScript" type="text/javascript">
+    parent.changeURL('<?=$BreakToPage?>' );
+</script>
+
+<? }
+
+
+//function exception_error_handler($errno, $errstr, $errfile, $errline ) {
+  //  throw new ErrorException($errstr, $errno, 0, $errfile, $errline);
+//}
 
 set_error_handler("exception_error_handler");
 try {
@@ -10,6 +33,8 @@ try {
 } catch (ErrorException $ex) {
     exit("Unable to load muximux.php.");
 }
+if (!isset($_SESSION)) session_start();
+
 ?>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->

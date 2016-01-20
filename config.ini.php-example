@@ -18,7 +18,7 @@
 ;
 ; You must rename this file to config.ini.php for Muximux to function.
 ;
-; See https://github.com/mescon/Muximux/ for more information.
+; See https://github.com/causefx/ or https://github.com/mescon/Muximux/ for more information.
 ;
 ; Block configuration:
 ;
@@ -33,10 +33,12 @@
 ; landingpage = "value" # true or false - if set to false, the iframe will load instantly. Use true if you're bombarded with HTTP Auth-dialogs every time you visit the website.
 ; icon = "value"        # Class name of either a Glyphicon or Font-Awesome icon. See https://glyphicons.com/ or http://fontawesome.io/icons/
 ; dd = "value"          # true or false - used to let Muximux know that you want this item to be in the dropdown menu. under [general], enabledropdown must also be "true".
+; hidden = "true"       # true or false - used to hide from anyone not logged in
+; security = "1"        # set to either 1, 2, or 3.  1 = Admin | 2 = Special User | 3 = Normal Logged in User
 
 [general]
 title = "Muximux - Application Management Console"
-enabledropdown = "true"
+enabledropdown = "false"
 
 [rutorrent]
 enabled = "true"
@@ -117,6 +119,8 @@ url = "https://sabnzbd.org/"
 landingpage = "false"
 icon = "fa fa-download"
 dd = "true"
+hidden = "true"
+security = "2"
 
 [plexpy]
 enabled = "true"
@@ -135,6 +139,8 @@ url = "https://github.com/theotherp/nzbhydra"
 landingpage = "true"
 icon = "glyphicon glyphicon-search"
 dd = "false"
+hidden = "true"
+security = "2"
 
 [deluge]
 enabled = "false"
@@ -153,3 +159,32 @@ url = "https://plex.tv/"
 landingpage = "true"
 icon = "fa fa-play-circle"
 dd = "false"
+hidden = "true"
+security = "1"
+
+
+
+; new settings - please dont touch
+[login]
+login = "true"
+name = "Login"
+url = "login.php"
+landingpage = "false"
+
+[logout]
+login = "true"
+name = "Logout"
+url = "logout.php"
+landingpage = "false"
+
+[admin]
+login = "true"
+name = "Admin Area"
+url = "admin"
+landingpage = "false"
+
+[profile]
+login = "true"
+name = "Profile Area"
+url = "profile.php"
+landingpage = "false"
