@@ -128,24 +128,24 @@ CREATE TABLE `login_settings` (
 --
 
 INSERT INTO `login_settings` (`id`, `option_name`, `option_value`) VALUES
-(1, 'site_address', 'http://envato.jigowatt.co.uk/demos/phplogin/'),
+(1, 'site_address', 'phplogin/'),
 (2, 'default_session', '0'),
-(3, 'admin_email', 'no-reply@jigowatt.co.uk'),
+(3, 'admin_email', 'no-reply@test.com'),
 (4, 'block-msg-enable', '1'),
 (5, 'block-msg', '<h1>Sorry, Hank.</h1>\r\n\r\n<p>We have detected that your user level does not entitle you to view the page requested.</p>\r\n\r\n<p>Please contact the website administrator if you feel this is in error.</p>\r\n\r\n<h5>What to do now?</h5>\r\n<p>To see this page you must <a href=''logout.php''>logout</a> and login with sufficiant privileges.</p>'),
 (6, 'block-msg-out', 'You need to login to do that.'),
 (7, 'block-msg-out-enable', '1'),
 (8, 'email-welcome-msg', 'Hello {{full_name}} !\r\n\r\nThanks for registering at {{site_address}}. Here are your account details:\r\n\r\nName: {{full_name}}\r\nUsername: {{username}}\r\nEmail: {{email}}\r\nPassword: *hidden*\r\n\r\nYou will first have to activate your account by clicking on the following link:\r\n\r\n{{activate}}'),
 (9, 'email-activate-msg', 'Hi there {{full_name}} !\r\n\r\nYour account at {{site_address}} has been successfully activated :). \r\n\r\nFor your reference, your username is <strong>{{username}}</strong>. \r\n\r\nSee you soon!'),
-(10, 'email-activate-subj', 'You''ve activated your account at Jigowatt !'),
-(11, 'email-activate-resend-subj', 'Here''s your activation link again for Jigowatt'),
+(10, 'email-activate-subj', 'You''ve activated your account !'),
+(11, 'email-activate-resend-subj', 'Here''s your activation link again'),
 (12, 'email-activate-resend-msg', 'Why hello, {{full_name}}. \r\n\r\nI believe you requested this:\r\n{{activate}}\r\n\r\nClick the link above to activate your account :)'),
-(13, 'email-welcome-subj', 'Thanks for signing up with Jigowatt :)'),
-(14, 'email-forgot-success-subj', 'Your password has been reset at Jigowatt'),
+(13, 'email-welcome-subj', 'Thanks for signing up :)'),
+(14, 'email-forgot-success-subj', 'Your password has been reset'),
 (15, 'email-forgot-success-msg', 'Welcome back, {{full_name}} !\r\n\r\nI''m just letting you know your password at {{site_address}} has been successfully changed. \r\n\r\nHopefully you were the one that requested this password reset !\r\n\r\nCheers'),
-(16, 'email-forgot-subj', 'Lost your password at Jigowatt?'),
-(17, 'email-forgot-msg', 'Hi {{full_name}},\r\n\r\nYour username is <strong>{{username}}</strong>.\r\n\r\nTo reset your password at Jigowatt, please click the following password reset link:\r\n{{reset}}\r\n\r\nSee you soon!'),
-(18, 'email-add-user-subj', 'You''re registered with Jigowatt !'),
+(16, 'email-forgot-subj', 'Lost your password ?'),
+(17, 'email-forgot-msg', 'Hi {{full_name}},\r\n\r\nYour username is <strong>{{username}}</strong>.\r\n\r\nTo reset your password, please click the following password reset link:\r\n{{reset}}\r\n\r\nSee you soon!'),
+(18, 'email-add-user-subj', 'You''re registered !'),
 (19, 'email-add-user-msg', 'Hello {{full_name}} !\r\n\r\nYou''re now registered at {{site_address}}. Here are your account details:\r\n\r\nName: {{full_name}}\r\nUsername: {{username}}\r\nEmail: {{email}}\r\nPassword: {{password}}'),
 (20, 'pw-encrypt-force-enable', '0'),
 (21, 'pw-encryption', 'MD5'),
@@ -154,11 +154,11 @@ INSERT INTO `login_settings` (`id`, `option_name`, `option_value`) VALUES
 (24, 'email-acct-update-msg', 'Hi {{full_name}} !\r\n\r\nYou ( {{username}} ) requested a change to update your password or email. Click the link below to confirm this change.\r\n\r\n{{confirm}}\r\n\r\nThanks!\r\n{{site_address}}'),
 (25, 'email-acct-update-success-subj', 'Your account has been updated'),
 (26, 'email-acct-update-success-msg', 'Hello {{full_name}},\r\n\r\nYour account details at {{site_address}} has been updated. \r\n\r\nYour username: {{username}}\r\n\r\nSee you around!'),
-(27, 'guest-redirect', 'http://envato.jigowatt.co.uk/demos/phplogin/login.php?e=1'),
+(27, 'guest-redirect', 'login.php?e=1'),
 (28, 'signout-redirect-referrer-enable', '1'),
 (29, 'signin-redirect-referrer-enable', '1'),
 (30, 'default-level', 'a:1:{i:0;s:1:"3";}'),
-(31, 'new-user-redirect', 'http://envato.jigowatt.co.uk/demos/phplogin/profile.php'),
+(31, 'new-user-redirect', 'profile.php'),
 (32, 'user-activation-enable', '1'),
 (33, 'email-new-user-subj', 'A new user has registered !'),
 (34, 'email-new-user-msg', 'Hello,\r\n\r\nThere''s been a new registration at &lt;a href=&quot;{{site_address}}&quot;&gt;your site&lt;/a&gt;.\r\n\r\nHere''s the user''s details:\r\n\r\nName: {{full_name}}\r\nUsername: {{username}}\r\nEmail: {{email}}');
@@ -202,9 +202,9 @@ CREATE TABLE `login_users` (
 --
 
 INSERT INTO `login_users` (`user_id`, `user_level`, `restricted`, `username`, `name`, `email`, `password`, `timestamp`) VALUES
-(1, 'a:3:{i:0;s:1:"3";i:1;s:1:"1";i:2;s:1:"2";}', 0, 'admin', 'Demo Admin', 'no-reply@jigowatt.co.uk', '21232f297a57a5a743894a0e4a801fc3', '2013-05-24 14:16:21'),
-(2, 'a:2:{i:0;s:1:"2";i:1;s:1:"3";}', 0, 'special', 'Demo Special', 'test.special@jigowatt.co.uk', '0bd6506986ec42e732ffb866d33bb14e', '2013-05-24 14:16:21'),
-(3, 'a:1:{i:0;s:1:"3";}', 0, 'user', 'Demo User', 'test.user@jigowatt.co.uk', 'ee11cbb19052e40b07aac0ca060c23ee', '2013-05-24 14:16:21');
+(1, 'a:3:{i:0;s:1:"3";i:1;s:1:"1";i:2;s:1:"2";}', 0, 'admin', 'Demo Admin', 'no-reply@test.com', '21232f297a57a5a743894a0e4a801fc3', '2013-05-24 14:16:21'),
+(2, 'a:2:{i:0;s:1:"2";i:1;s:1:"3";}', 0, 'special', 'Demo Special', 'test.special@test.com', '0bd6506986ec42e732ffb866d33bb14e', '2013-05-24 14:16:21'),
+(3, 'a:1:{i:0;s:1:"3";}', 0, 'user', 'Demo User', 'test.user@test.com', 'ee11cbb19052e40b07aac0ca060c23ee', '2013-05-24 14:16:21');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
