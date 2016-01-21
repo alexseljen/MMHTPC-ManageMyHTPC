@@ -103,12 +103,12 @@ function frameContent($config) {
             if(!empty($section["default"]) && !($section["default"]=="false") && ($section["default"]=="true")) {
                 $item .= "\n<li data-content=\"". $keyname . "\" class=\"selected\">\n<iframe allowfullscreen=\"true\" webkitallowfullscreen=\"true\" mozallowfullscreen=\"true\" scrolling=\"auto\" src=\"". $section["url"] . "\"></iframe>\n</li>\n";
             } else {
-                $item .= "\n<li data-content=\"". $keyname . "\">\n<iframe allowfullscreen=\"true\" webkitallowfullscreen=\"true\" mozallowfullscreen=\"true\" scrolling=\"auto\" data-src=\"". $section["url"] . "\"></iframe>\n</li>\n";
+                $item .= "\n<li data-content=\"". $keyname . "\">\n<iframe sandbox=\"allow-forms allow-same-origin allow-pointer-lock allow-scripts\" allowfullscreen=\"true\" webkitallowfullscreen=\"true\" mozallowfullscreen=\"true\" scrolling=\"auto\" data-src=\"". $section["url"] . "\"></iframe>\n</li>\n";
             }
 
         }
         if(!empty($section["login"]) && !($section["login"]=="false") && ($section["login"]=="true")) {
-            $item .= "\n<li data-content=\"". $keyname . "\">\n<iframe allowfullscreen=\"true\" webkitallowfullscreen=\"true\" mozallowfullscreen=\"true\" scrolling=\"auto\" data-src=\"". $section["url"] . "\"></iframe>\n</li>\n";
+            $item .= "\n<li data-content=\"". $keyname . "\">\n<iframe sandbox=\"allow-forms allow-same-origin allow-pointer-lock allow-scripts\" allowfullscreen=\"true\" webkitallowfullscreen=\"true\" mozallowfullscreen=\"true\" scrolling=\"auto\" data-src=\"". $section["url"] . "\"></iframe>\n</li>\n";
         }
     }
     return $item;
